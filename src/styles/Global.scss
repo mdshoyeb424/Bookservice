@@ -1,0 +1,11 @@
+@import "./variables";
+body{
+    background: $background;
+    h1,h2,h3,h4,h5{
+        color: $test-main;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}

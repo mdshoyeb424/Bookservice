@@ -1,0 +1,48 @@
+@import "../../../styles/variables";
+
+.login{
+    height: 100vh;
+    width: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .login-card{
+        background: $card;
+        box-shadow: 0px 0px 5px $test-secondary;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 5px;
+        .login-card-body{
+            form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            input{
+                width: 100%;
+                padding:8px 10px;
+                border-radius: 10px;
+                border:2px solid $secondary;
+                outline: $primary;
+            }
+            button{
+                background: $primary;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 5px 15px;
+                border-radius: 10px;
+                color: $card;
+                border:2px solid $card;
+                &:hover{
+                    color: $primary;
+                    background: $card;
+                    border:2px solid $primary;
+                }
+            }
+            }
+        }
+    }
+}
