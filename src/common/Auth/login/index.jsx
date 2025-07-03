@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./login.scss"
+import { useState } from "react";
+import { loginService } from "../../../services/auth";
 const Login = () => {
+    const navigate=useNavigate();
     const [user,setUser] = useState(null);
     const handleChange=(e)=>{
         const {name,value} = e.target;
-        setUser({...name,[name]:value});
+        setUser({...user,[name]:value});
     }
     const handlleSubmit=(e)=>{
-        try {
-            console.log(user);
-        } catch (error) {
-            console.log(error);
-        }
+        e.preventDefault();
+         loginService(user)
+         navigate("/");
     }
     return (
         <div className="login">

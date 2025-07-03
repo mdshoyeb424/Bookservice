@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 .navbar{
     display: flex;
     background: $primary;
@@ -11,7 +11,7 @@
             display: flex;
             margin-left: auto;
             margin-bottom: 0;
-           li a{
+           li a,li div{
             color: $card;
             padding: 10px 20px;
             font-size: 15px;
@@ -20,6 +20,7 @@
             display: flex;
             flex-direction: column;
             margin: auto;
+            cursor: pointer;
             svg{
                 display: flex;
                 margin: auto;

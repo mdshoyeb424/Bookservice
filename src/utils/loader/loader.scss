@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 .hair-loader{
     position: absolute !important;
     height: 100vh;

@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../Layout'
+import { books } from '../../data/booksData'
+import AllBooksComponent from '../../components/books/allBooks'
+import HomeBook from '../../components/books/homeBook'
 
 const Home = () => {
+  useEffect(() => {
+  localStorage.setItem("books",JSON.stringify(books));
+  },[])
   return (
    <Layout>
-    <h1>Home page</h1>
+    <HomeBook/>
+    {/* <AllBooksComponent/> */}
     </Layout>
   )
 }
