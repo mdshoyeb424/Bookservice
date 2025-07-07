@@ -9,24 +9,36 @@ export const getBookById = (id) => {
 }
 
 export const updateBook = (data, id) => {
-        const users = localStorage.getItem('books') || [];
-        const updateUsers = users.map((b) =>
-            b.id === id ? { ...b, ...data } : b
-        )
-        localStorage.setItem("books", JSON.stringify(updateUsers));
-        return data;
-}
+  const storedBooks = localStorage.getItem('books');
+  const books = storedBooks ? JSON.parse(storedBooks) : [];
+
+  const updatedBooks = books.map((book) =>
+    book.id === id ? { ...book, ...data } : book
+  );
+
+  localStorage.setItem("books", JSON.stringify(updatedBooks));
+  return data;
+};
+
 
 export const deleteBook = (id) => {
-        const users = localStorage.getItem('books') || [];
-        const updateUsers = users.filter((b) => b.id != id);
-        localStorage.setItem("books", JSON.stringify(updateUsers));
-        return true;
-}
+  const storedBooks = localStorage.getItem('books');
+  const books = storedBooks ? JSON.parse(storedBooks) : [];
+
+  const updatedBooks = books.filter((b) => b.id !== id);
+  localStorage.setItem("books", JSON.stringify(updatedBooks));
+
+  return true;
+};
+
 
 
 export const addBook = (data) => {
-        const users = [...defineUsers, data];
-        localStorage.setItem("books", JSON.stringify(users));
-        return data;
-}
+  const storedBooks = localStorage.getItem('books');
+  const books = storedBooks ? JSON.parse(storedBooks) : [];
+
+  const updatedBooks = [...books, data];
+  localStorage.setItem("books", JSON.stringify(updatedBooks));
+
+  return data;
+};
